@@ -8,5 +8,4 @@ const resultButton = document.querySelector('#resultButton');
 resultButton.addEventListener('click', () => {
   const result = attack(creature.value, damage.value);
   resultTag.innerHTML = result;
-  console.log(result);
 });
