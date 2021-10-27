@@ -6,7 +6,6 @@ jobs:
     runs-on: windows-2016
 
     steps:
-      - run: node -v
       - name: Lint and Test
       - name: Checkout code
         uses: actions/checkout@v2
