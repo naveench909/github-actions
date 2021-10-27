@@ -3,9 +3,11 @@ on: [push]
 jobs:
   standard-checks:
     name: Lint and Test
-    runs-on: ubuntu-latest
+    runs-on: windows-2016
 
     steps:
+      - run: node -v
+      - name: Lint and Test
       - name: Checkout code
         uses: actions/checkout@v2
 
@@ -14,17 +16,5 @@ jobs:
       - name: Run Eslint
         run: npm run ci:lint
       - name: Run test
-        run: npm run ci:test
-  tests:
-    name: Test
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Install Packages
-        run: npm ci
-      - name: Run tests
         run: npm run ci:test
     
